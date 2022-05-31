@@ -1,0 +1,33 @@
+<div class="menu" style="margin-bottom:15px;">
+  <div class="menu_center">
+    <div class="menu_buttons">
+      <a class="button" mat-button (click)="onGeneral()">
+        <span class="button_line button_line--top"></span>
+        <span class="button_line button_line--right"></span>
+        <span class="button_line button_line--bottom"></span>
+        <span class="button_line button_line--left"></span>
+        Главная
+      </a>
+  
+      <input type="file" multiple #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
+      <a class="button" mat-button (click)="file.click()">
+        <span class="button_line button_line--top"></span>
+        <span class="button_line button_line--right"></span>
+        <span class="button_line button_line--bottom"></span>
+        <span class="button_line button_line--left"></span>
+        Загрузить файлы
+      </a>
+    </div>
+
+    <div>
+      <li class="upload_result" *ngFor="let res of uploadResults;">
+        <span *ngIf="res.isSuccess" class="upload_success">
+          {{"Данные из файла: " + res.fileName + " были успешно занесены в базу!"}}
+        </span>
+        <span *ngIf="!res.isSuccess" class="upload_unseccess">
+          {{"Не удалось обработать файл: " + res.fileName + "!"}}
+        </span>
+      </li>
+    </div>
+  </div>
+</div>

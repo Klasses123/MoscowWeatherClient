@@ -1,0 +1,141 @@
+table {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  background: wheat;
+  margin-top: 20px;
+  border: 1px solid #333;
+  border-collapse: collapse;
+  color: #333;
+  td, th {
+    padding: 0px 5px;
+    border: 1px solid #333;
+  }
+}
+
+::ng-deep .options {
+  background-color: #2196f3;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}
+
+.mat-menu-content {
+  background-color: #2196f3;
+}
+
+.optionButton {
+  background-color: wheat;
+  color: black;
+  cursor: pointer;
+}
+
+.menu {
+  /*display: flex;
+  justify-content: center;*/
+  font-family: Consolas;
+  height: 100vh;
+  background-color: #333;
+}
+.menu_center {
+  width: 100%;
+  align-items: center;
+}
+
+.menu_buttons {
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 15px 15px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #2196f3;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.button_line {
+  position: absolute;
+  display: block;
+}
+
+.button_line--top {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2196f3);
+}
+
+.button:hover .button_line--top {
+  left: 100%;
+  transition: 0.75s;
+  transition-delay: 0.25s;
+}
+
+.button_line--top {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2196f3);
+}
+
+.button:hover .button_line--top {
+  left: 100%;
+  transition: 0.75s;
+  transition-delay: 0.25s;
+}
+
+.button_line--bottom {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #2196f3);
+}
+
+.button:hover .button_line--bottom {
+  right: 100%;
+  transition: 0.75s;
+  transition-delay: 0.25s;
+}
+
+.button_line--left {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, #2196f3);
+}
+
+.button:hover .button_line--left {
+  bottom: 100%;
+  transition: 0.75s; 
+}
+
+.button_line--right {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #2196f3);
+}
+
+.button:hover .button_line--right {
+  top: 100%;
+  transition: 0.75s;
+}
+
+.button:hover {
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  background-color: #2196f3;
+  color: #333;
+  transition-delay: 0.5s;
+}
+

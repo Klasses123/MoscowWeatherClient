@@ -1,0 +1,70 @@
+<div>
+  <div>
+    <a class="button" mat-button (click)="onGeneral()">
+      <span class="button_line button_line--top"></span>
+      <span class="button_line button_line--right"></span>
+      <span class="button_line button_line--bottom"></span>
+      <span class="button_line button_line--left"></span>
+      Главная
+    </a>
+    <a class="button" mat-button [matMenuTriggerFor]="yearMenu">
+      <span class="button_line button_line--top"></span>
+      <span class="button_line button_line--right"></span>
+      <span class="button_line button_line--bottom"></span>
+      <span class="button_line button_line--left"></span>
+      Год
+    </a>
+    <mat-menu class="options" #yearMenu="matMenu">
+      <button class="optionButton" *ngFor="let y of years" (click)="chooseYear(y)"> 
+        {{ y }} 
+      </button>
+    </mat-menu>
+
+    <a class="button" mat-button [matMenuTriggerFor]="monthMenu">
+      <span class="button_line button_line--top"></span>
+      <span class="button_line button_line--right"></span>
+      <span class="button_line button_line--bottom"></span>
+      <span class="button_line button_line--left"></span>
+      Месяц
+    </a>
+    <mat-menu class="options months" #monthMenu="matMenu">
+      <button mat-menu-item class="optionButton" *ngFor="let m of months" (click)="chooseMonth(m.monthNumber!)">{{m.month}}</button>
+    </mat-menu>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th> № </th>
+        <th> Дата </th>
+        <th> Время (Мск.) </th>
+        <th>T</th>
+        <th>Отн. влажность воздуха, %</th>
+        <th>Td</th>
+        <th>Атм. давление, мм рт. ст.</th>
+        <th>Направление ветра</th>
+        <th>Скорость ветра</th>
+        <th>Облачность</th>
+        <th>h</th>
+        <th>Погодные явления</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let element of data | paginate: config">
+        <td> {{ data.indexOf(element) + 1 + (page - 1) * pageDataCount}} </td>
+        <td>{{element.date}}</td>
+        <td>{{element.time}}</td>
+        <td>{{element.temperature}}</td>
+        <td>{{element.relativeHumidity}}</td>
+        <td>{{element.dewPoint}}</td>
+        <td>{{element.atmospherePressure}}</td>
+        <td>{{element.windDirection}}</td>
+        <td>{{element.windSpeed === 0 ? '' : element.windSpeed}}</td>
+        <td>{{element.cloudiness === 0 ? '' : element.cloudiness}}</td>
+        <td>{{element.cloudBase}}</td>
+        <td>{{element.weatherConditions}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls nextLabel="Следующий" previousLabel="Предыдущий" (pageChange)="pageChanged($event)"></pagination-controls>
+</div>

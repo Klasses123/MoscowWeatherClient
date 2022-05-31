@@ -1,0 +1,10 @@
+::ng-deep ul > li:not(.active) > a {
+  background-color: wheat !important;
+  border-color: black !important;
+}
+
+::ng-deep ul > li.disabled > span {
+  background-color: wheat !important;
+  border-color: black !important;
+}
+
